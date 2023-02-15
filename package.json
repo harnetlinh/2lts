@@ -9,7 +9,7 @@
         "lint": "eslint . -c .eslintrc.js --fix --ext .ts,.js,.vue,.tsx,.jsx",
         "build:icons": "node src/@iconify/build-icons.js",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@casl/ability": "^6.2.0",
