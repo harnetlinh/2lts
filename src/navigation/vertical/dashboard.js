@@ -1,10 +1,10 @@
 export default [
   {
-    title: 'Dashboards',
+    title: 'Bảng điều khiển',
     icon: { icon: 'tabler-smart-home' },
     children: [
       {
-        title: 'Analytics',
+        title: 'Phân tích',
         to: 'dashboards-analytics',
       },
 

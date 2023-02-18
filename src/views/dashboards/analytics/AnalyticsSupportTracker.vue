@@ -12,7 +12,7 @@ const chartOptions = computed(() => {
   const variableTheme = vuetifyTheme.current.value.variables
   
   return {
-    labels: ['Performance'],
+    labels: ['Hiệu suất'],
     chart: { type: 'radialBar' },
     plotOptions: {
       radialBar: {
@@ -42,21 +42,16 @@ const chartOptions = computed(() => {
         },
       },
     },
-    colors: [currentTheme.primary],
+
+    colors: ['green'],
     fill: {
       type: 'gradient',
       gradient: {
-        shade: 'dark',
-        shadeIntensity: 0.5,
-        gradientToColors: [currentTheme.primary],
-        inverseColors: true,
-        opacityFrom: 1,
-        opacityTo: 0.6,
-        stops: [
-          30,
-          70,
-          100,
-        ],
+        // shade: 'dark',
+        // shadeIntensity: 0.1,
+        // inverseColors: true,
+        // opacityFrom: 1,
+        // opacityTo: 0.6,
       },
     },
     stroke: { dashArray: 10 },
@@ -81,20 +76,20 @@ const supportTicket = [
   {
     avatarColor: 'primary',
     avatarIcon: 'tabler-ticket',
-    title: 'New Tickets',
-    subtitle: '142',
+    title: 'Đang xếp hàng',
+    subtitle: '60',
   },
   {
     avatarColor: 'info',
-    avatarIcon: 'tabler-circle-check',
-    title: 'Open Tickets',
-    subtitle: '28',
+    avatarIcon: 'tabler-user',
+    title: 'Nhân viên',
+    subtitle: '10',
   },
   {
     avatarColor: 'warning',
     avatarIcon: 'tabler-clock',
-    title: 'Response Time',
-    subtitle: '1 Day',
+    title: 'Chờ trung bình',
+    subtitle: '12 phút',
   },
 ]
 
@@ -118,12 +113,15 @@ function makeid(length) {
 const randomSeriesData = () => {
 
   setInterval(() => {
-    let num = randomIntFromInterval(60,95)
+    let num = randomIntFromInterval(40,80)
     series.shift()
     series.push(num)
+    if (num > 60) {
+      chartOptions.color = ['red']
+    } else {
+      chartOptions.color = ['green']
+    }
     chartRef.value.updateSeries(series, false, true)
-
-    // chartRef.value.updateSeries(series, false, true)
   }, 1500)
 }
 
@@ -134,8 +132,7 @@ onMounted(() => {
 
 <template>
   <VCard
-    title="Support Tracker"
-    subtitle="Last 7 Days"
+    title="Văn phòng A"
   >
     <template #append>
       <div class="mt-n4 me-n2">
@@ -174,10 +171,10 @@ onMounted(() => {
         >
           <div class="mb-4">
             <h4 class="text-4xl font-weight-semibold mb-2">
-              164
+              80
             </h4>
             <p class="text-sm">
-              Total Tickets
+              Tổng số người chờ xử lý
             </p>
           </div>
 
@@ -210,7 +207,6 @@ onMounted(() => {
           md="7"
           sm="6"
         >
-          {{ series }}
           <VueApexCharts
             ref="chartRef"
             :update-args="[true, false]"

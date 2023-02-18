@@ -1,7 +1,7 @@
 export default [
-  { heading: 'Others' },
+  { heading: 'Khác' },
   {
-    title: 'Access Control',
+    title: 'Báo cáo',
     icon: { icon: 'tabler-shield' },
     to: 'access-control',
     action: 'read',
@@ -44,13 +44,13 @@ export default [
   //   target: '_blank',
   // },
   {
-    title: 'Documentation',
+    title: 'Dự đoán',
     href: '/',
     icon: { icon: 'tabler-file' },
     target: '_blank',
   },
   {
-    title: 'Coming Soon...',
+    title: 'Tài liệu',
     href: '/',
     icon: { icon: 'tabler-lifebuoy' },
     target: '_blank',

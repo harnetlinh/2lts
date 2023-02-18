@@ -1,7 +1,6 @@
 <script setup>
 import AnalyticsEarningReportsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsEarningReportsWeeklyOverview.vue';
 import AnalyticsSupportTracker from '@/views/dashboards/analytics/AnalyticsSupportTracker.vue';
-import CardStatisticsVertical from '@core/components/CardStatisticsVertical.vue';
 import { useTheme } from 'vuetify';
 
 const vuetifyTheme = useTheme()
@@ -124,72 +123,26 @@ onMounted(() => {
 
 <template>
   <VRow class="match-height">
-    <!-- 👉 Statistics Vertical -->
-    <VCol
-      
-      cols="12"
-      md="3"
-      sm="6"
-    >
-      <CardStatisticsVertical
-        :ref="statisticsVerticalRef"
-        v-bind="StatisticsVerticalData[0]"
-      />
-    </VCol>
-    
-    <!-- 👉 Statistics Vertical -->
-    <VCol
-      
-      cols="12"
-      md="3"
-      sm="6"
-    >
-      <CardStatisticsVertical
-        :ref="statisticsVerticalRef"
-        v-bind="StatisticsVerticalData[1]"
-      />
-    </VCol>
-
-    <!-- 👉 Statistics Vertical -->
-    <VCol
-      
-      cols="12"
-      md="3"
-      sm="6"
-    >
-      <CardStatisticsVertical
-        :ref="statisticsVerticalRef"
-        v-bind="StatisticsVerticalData[2]"
-      />
-    </VCol>
-
-    <!-- 👉 Statistics Vertical -->
-    <VCol
-      
-      cols="12"
-      md="3"
-      sm="6"
-    >
-      <CardStatisticsVertical
-        :ref="statisticsVerticalRef"
-        v-bind="StatisticsVerticalData[3]"
-      />
-    </VCol>
-
-    <!-- 👉 Earning Reports Weekly Overview -->
-    <VCol
-      cols="12"
-      md="6"
-    >
-      <AnalyticsEarningReportsWeeklyOverview />
-    </VCol>
-
     <!-- 👉 Support Tracker -->
     <VCol
       cols="12"
       md="6"
     >
       <AnalyticsSupportTracker />
+    </VCol>
+    <VCol
+      cols="12"
+      md="6"
+    >
+      <AnalyticsSupportTracker />
+    </VCol>
+    
+    <!-- 👉 Earning Reports Weekly Overview -->
+    <VCol
+      cols="12"
+      md="12"
+    >
+      <AnalyticsEarningReportsWeeklyOverview />
     </VCol>
   </VRow>
 </template>
