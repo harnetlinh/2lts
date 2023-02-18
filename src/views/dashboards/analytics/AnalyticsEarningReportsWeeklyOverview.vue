@@ -59,13 +59,13 @@ const chartOptions = computed(() => {
     legend: { show: false },
     xaxis: {
       categories: [
-        'Mo',
-        'Tu',
-        'We',
-        'Th',
-        'Fr',
-        'Sa',
-        'Su',
+        'Th2',
+        'Th3',
+        'Th4',
+        'Th5',
+        'Th6',
+        'Th7',
+        'CN',
       ],
       axisBorder: { show: false },
       axisTicks: { show: false },
@@ -90,22 +90,29 @@ const earningsReports = [
   {
     color: 'primary',
     icon: 'tabler-currency-dollar',
-    title: 'Earnings',
-    amount: '$545.69',
-    progress: '55',
+    title: 'Số hồ sơ trung bình 1 nhân viên tiếp nhận thời điểm',
+    amount: '3',
+    progress: '40',
   },
   {
     color: 'info',
     icon: 'tabler-chart-pie-2',
-    title: 'Profit',
-    amount: '$256.34',
+    title: `Số người chờ trung bình mỗi giờ `,
+    amount: '5',
     progress: '25',
   },
   {
     color: 'error',
     icon: 'tabler-brand-paypal',
-    title: 'Expense',
-    amount: '$74.19',
+    title: 'Thời gian chờ trung bình',
+    amount: '12,5 phút',
+    progress: '65',
+  },
+  {
+    color: 'info',
+    icon: 'tabler-brand-paypal',
+    title: 'Thời gian xử lý trung bình',
+    amount: '5,3 phút',
     progress: '65',
   },
 ]
@@ -114,8 +121,8 @@ const earningsReports = [
 <template>
   <VCard>
     <VCardItem class="pb-sm-0">
-      <VCardTitle>Earning Reports</VCardTitle>
-      <VCardSubtitle>Weekly Earnings Overview</VCardSubtitle>
+      <VCardTitle>Báo cáo tuần</VCardTitle>
+      <VCardSubtitle />
 
       <template #append>
         <div class="mt-n4 me-n2">
@@ -154,18 +161,18 @@ const earningsReports = [
         >
           <div class="d-flex align-center gap-2 mb-2 pb-1 flex-wrap">
             <h4 class="text-4xl font-weight-semibold">
-              $468
+              1200
             </h4>
             <VChip
               label
               color="success"
             >
-              +4.2%
+              +14.2%
             </VChip>
           </div>
 
           <p class="text-sm">
-            You informed of this week compared to last week
+            Hồ sơ đã được xử lý trong 7 ngày qua
           </p>
         </VCol>
 
@@ -188,7 +195,7 @@ const earningsReports = [
             v-for="report in earningsReports"
             :key="report.title"
             cols="12"
-            sm="4"
+            sm="3"
           >
             <div class="d-flex align-center">
               <VAvatar
