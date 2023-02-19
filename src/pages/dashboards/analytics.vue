@@ -1,6 +1,7 @@
 <script setup>
 import AnalyticsEarningReportsWeeklyOverview from '@/views/dashboards/analytics/AnalyticsEarningReportsWeeklyOverview.vue';
 import AnalyticsSupportTracker from '@/views/dashboards/analytics/AnalyticsSupportTracker.vue';
+import AnalyticsSupportTracker2 from '@/views/dashboards/analytics/AnalyticsSupportTracker2.vue';
 import { useTheme } from 'vuetify';
 
 const vuetifyTheme = useTheme()
@@ -134,7 +135,7 @@ onMounted(() => {
       cols="12"
       md="6"
     >
-      <AnalyticsSupportTracker />
+      <AnalyticsSupportTracker2 />
     </VCol>
     
     <!-- 👉 Earning Reports Weekly Overview -->

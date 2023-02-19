@@ -132,7 +132,7 @@ onMounted(() => {
 
 <template>
   <VCard
-    title="Văn phòng Thanh Xuân"
+    title="Văn phòng Cầu Giấy"
   >
     <template #append>
       <div class="mt-n4 me-n2">
